@@ -30,9 +30,11 @@ public class OpenLdapAuthenticationProvider implements AuthenticationProvider {
 
     @PostConstruct
     private void initContext() {
-        contextSource.setUrl("ldap://1.1.1.1:389/ou=users,dc=wwww,dc=devcrutch,dc=com");
+//        contextSource.setUrl("ldap://1.1.1.1:389/ou=users,dc=wwww,dc=devcrutch,dc=com");
+//        contextSource.setUrl("ldap://dc1.tanmeyah.lan:389/ou=users,dc=wwww,dc=com");
+        contextSource.setUrl("ldap://localhost:389/cn=admin,dc=example,dc=com");
         contextSource.setAnonymousReadOnly(true);
-        contextSource.setUserDn("ou=users,");
+        contextSource.setUserDn("cn=admin");
         contextSource.afterPropertiesSet();
         ldapTemplate = new LdapTemplate(contextSource);
     }

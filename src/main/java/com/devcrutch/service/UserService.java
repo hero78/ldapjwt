@@ -10,7 +10,7 @@ public class UserService {
     public User loadUserByUsername(String name) {
         User u = new User();
         u.setId(1l);
-        u.setUsername("v.hashemi");
+        u.setUsername(name);
         return u;
     }
 }
